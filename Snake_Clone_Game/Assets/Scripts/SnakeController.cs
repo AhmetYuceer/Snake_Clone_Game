@@ -59,24 +59,28 @@ public class SnakeController : MonoBehaviour
             direction.y = 0 ;
             direction.x = 1; 
             isRotated = true;
+            transform.rotation = Quaternion.Euler(0,0,90);
         }
         else if(isPressLeft && direction.x != 1 && !isRotated)
         {
             direction.y = 0 ;
             direction.x = -1;
             isRotated = true;
+           transform.rotation = Quaternion.Euler(0,0,-90);
         }
         else if(isPressUp && direction.y != -1 && !isRotated)
         {
             direction.y = 1;
             direction.x = 0;
             isRotated = true;
+            transform.rotation = Quaternion.Euler(0,0,180);
         }
         else if(isPressDown && direction.y != 1 && !isRotated)
         {
             direction.y = -1 ;
             direction.x = 0;
             isRotated = true;
+            transform.rotation = Quaternion.Euler(0,0,0);
         }    
     }
 
@@ -114,8 +118,6 @@ public class SnakeController : MonoBehaviour
             yield return new WaitForSeconds(moveDelay);
         }
     }
-
-
     private void DeadControl()
     {
         var headPos = transform.position;

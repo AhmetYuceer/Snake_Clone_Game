@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static Vector2 foodPos;
 
 
-    public static int score = 0;
+    public static int score;
     public static int scoreValue = 5;
     [SerializeField] private Text scoreText;
 
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void Start() 
     {
         spawnedFoodCount = 0;
+        score = 0;
     }
 
     private void Update() 
